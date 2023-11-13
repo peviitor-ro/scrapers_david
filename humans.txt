@@ -1,0 +1,3 @@
+Scraper developer: David Mondoc
+Tester: Emese Egeto
+Consultant de specialitate: Laurentiu
