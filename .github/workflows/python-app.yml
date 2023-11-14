@@ -25,10 +25,7 @@ jobs:
         python3 setup.py develop
         npm i peviitor_jsscraper
     - name: Runing Scrapers
-      env: 
-        APIKEY: ${{ secrets.APIKEY }}
-        MSCDAVID: ${{ secrets.MSCDAVID }}
+      env:
         DAVIDMONDOC: ${{ secrets.DAVIDMONDOC }}
-        Grasum_Key: ${{ secrets.GRASUM_KEY }}
       run: |
         python3 sites/main.py
