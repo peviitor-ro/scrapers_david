@@ -4,7 +4,7 @@ import requests
 
 exclude = ['__init__.py','main.py']
 path = os.path.dirname(os.path.abspath(__file__))
-resolveApi = "https://dev.laurentiumarian.ro/scraper/scraper_david"
+resolveApi = "https://dev.laurentiumarian.ro/scraper/scrapers_david/"
 
 for site in os.listdir(path):
     if site.endswith('.py') and site not in exclude:
