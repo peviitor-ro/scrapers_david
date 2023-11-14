@@ -17,6 +17,10 @@ for job in jobsElements:
     country = "Romania"
     city = job.find('div', {'class':'meta-location'}).text.strip()
     county = get_county(city)
+    job_type = job.find("div", {"class":"meta-shedule-duration"}).text.strip()
+    remote=[]
+    if "Remote" in job_type:
+        remote.append("Remote")
 
     jobs.append(
         {
@@ -25,7 +29,8 @@ for job in jobsElements:
          'city':city,
          'county':county,
          'country':country,
-         'company':company
+         'company':company,
+         'remote': remote
         }
     )
 
