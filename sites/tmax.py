@@ -32,7 +32,7 @@ for job in jobElements:
 for version in [1, 4]:
     publish(version, company, jobs, 'DAVIDMONDOC')
 
-publish_logo(company, 'https://www.unicredit.ro/etc/designs/cee2020-pws-ro/img/logos/logo_ro.svg')
+publish_logo(company, 'https://tmaxgroup.com/wp-content/themes/wordpress-tmax/images/logo.svg')
 
 show_jobs(jobs)
 
