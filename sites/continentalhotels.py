@@ -17,7 +17,7 @@ jobsElements=scraper.find_all("a")
 jobs=[]
 def get_city(string):
     stars=[" 1*"," 2*"," 3*"," 4*"," 5*"," 6*"]
-    cityChange={"Mureș":"Targu Mures", "Severin":"Drobeta-Turnu Severin"}
+    cityChange={"Mureș":"Targu-Mures", "Severin":"Drobeta-Turnu Severin"}
     for star in stars:
         string=string.replace(star, "")
     cities=string.split(' ')[-1]
