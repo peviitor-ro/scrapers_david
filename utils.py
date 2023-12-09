@@ -41,9 +41,14 @@ def translate_city(city):
         # This is general for all scrapers
         "bucharest": "Bucuresti",
         "cluj": "Cluj-Napoca",
+        "Cristești, Mureș":"Cristesti",
+        "Târgu Mureș":"Targu-Mures",
+        "Tîrgu-Mureș":"Targu-Mures",
+        "Targu Mures": "Targu-Mures",
         # This is for Arabesque Scraper
-        "targul-mures": "Targu Mures",
+        "targul-mures":"Targu-Mures",
         "militari": "Bucuresti",
+        "Mureș": "Targu-Mures"
         ############################
     }
     
