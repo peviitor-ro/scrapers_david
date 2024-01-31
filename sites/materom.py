@@ -16,7 +16,7 @@ for element in jobElements:
     job_title=job.find('h4').text.split("-")[0].strip()
     job_link=url+'#'+element['id']
     city = remove_diacritics(translate_city(job.find('h4').text.split("-")[-1].split(",")[0].strip()))
-    if city =='Napoca':
+    if city ==' Napoca':
         city ='Cluj-Napoca'
     if 'Mures' in city:
         city='Targu-Mures'
