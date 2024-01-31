@@ -47,4 +47,3 @@ for version in [1, 4]:
 publish_logo(company, 'https://www.materom.ro/wp-content/uploads/logo/logo-materom.png')
 
 show_jobs(jobs)
-print(len(jobs))
