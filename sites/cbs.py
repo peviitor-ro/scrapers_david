@@ -3,7 +3,7 @@ from utils import (publish, publish_logo, create_job, show_jobs)
 from getCounty import get_county
 
 url='https://www.cbs-ee.ro/joburi/'
-company='CBS Eastern Europe'
+company='cbs'
 scraper=Scraper()
 scraper.get_from_url(url)
 
