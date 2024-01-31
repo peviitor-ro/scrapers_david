@@ -18,7 +18,16 @@ for element in jobElements:
     city = remove_diacritics(translate_city(job.find('h4').text.split("-")[-1].split(",")[0].strip()))
     if 'Mures' in city:
         city='Targu-Mures'
-    county=get_county(city)
+    if "Bucuresti Mogosoaia" in city:
+        city = 'Mogosoaia'
+    if city =='Bucuresti Militari' or  city == 'Bucuresti Colentina':
+        city ='Bucuresti'
+    if city == 'Cristesti':
+        county='Mures'
+    elif city == 'Iasi':
+        county = 'Iasi'
+    else:
+        county=get_county(city)
     country="Romania"
 
     jobs.append(

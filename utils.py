@@ -44,6 +44,8 @@ def translate_city(city):
         "cristești, mureș":"Cristesti",
         "alba": "Alba Iulia",
         "militari": "Bucuresti",
+        "napoca": "Cluj-Napoca",
+
 
         ############################
     }
