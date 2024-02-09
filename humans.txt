@@ -1,2 +1,3 @@
 Scraper developer: David Mondoc
+Tester : Dragoi Diana 
 Consultant de specialitate: Laurentiu
