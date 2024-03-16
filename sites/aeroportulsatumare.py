@@ -2,7 +2,7 @@ from scraper.Scraper import Scraper
 from utils import (publish, publish_logo, show_jobs)
 
 url='https://www.aeroportulsatumare.ro/cariere.html'
-company='AeroportulInternationalSatuMare'
+company='aeroportulinternationalsatumare'
 scraper=Scraper()
 scraper.get_from_url(url)
 
