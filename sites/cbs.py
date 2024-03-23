@@ -8,28 +8,28 @@ scraper=Scraper()
 scraper.get_from_url(url)
 
 jobsElements=scraper.find('div',{'id':'accordionCompliant'}).find_all('div', {'class':'card'})
-print(jobsElements)
-# jobs=[]
 
-# for job in jobsElements:
-#     job_title = job.find('h5').text.strip()
-#     job_link =url+'#'+job.find('div', {'class':'card-header'})['id']
-#     city='Sibiu'
-#     county=get_county(city)
-#     country='Romania'
+jobs=[]
 
-#     jobs.append(
-#         {
-#             'job_title': job_title,
-#             'job_link': job_link,
-#             'city': city,
-#             'county': county,
-#             'country': country,
-#             'company': company
-#         }
-#     )
-# for version in [1, 4]:
-#     publish(version, company, jobs, 'DAVIDMONDOC')
+for job in jobsElements:
+    job_title = job.find('h5').text.strip()
+    job_link =url+'#'+job.find('div', {'class':'card-header'})['id']
+    city='Sibiu'
+    county=get_county(city)
+    country='Romania'
 
-# publish_logo(company, 'https://www.cbs-ee.ro/static/imagini/logo.png')
-# show_jobs(jobs)
+    jobs.append(
+        {
+            'job_title': job_title,
+            'job_link': job_link,
+            'city': city,
+            'county': county,
+            'country': country,
+            'company': company
+        }
+    )
+for version in [1, 4]:
+    publish(version, company, jobs, 'DAVIDMONDOC')
+
+publish_logo(company, 'https://www.cbs-ee.ro/static/imagini/logo.png')
+show_jobs(jobs)
