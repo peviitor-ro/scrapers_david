@@ -33,7 +33,6 @@ for version in [1, 4]:
     publish(version, company, jobs, 'DAVIDMONDOC')
 
 publish_logo(company, 'https://tmaxgroup.com/wp-content/themes/wordpress-tmax/images/logo.svg')
-
 show_jobs(jobs)
 
 

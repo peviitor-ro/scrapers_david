@@ -7,7 +7,7 @@ company='materom'
 scraper=Scraper()
 scraper.get_from_url(url)
 
-jobElements=scraper.find('div', {'id':'pgc-4415-3-0'}).find_all('div',{'class':'widget-open-position'})
+jobElements=scraper.find('div', {'id':'pgc-4415-3-0'})
 
 jobs=[]
 
