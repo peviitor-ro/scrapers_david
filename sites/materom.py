@@ -15,9 +15,12 @@ for element in jobElements:
     job=element.find('div', {'class':'open-position'})
     job_title=job.find('h4').text.split("-")[0].strip()
     job_link=url+'#'+element['id']
-    city = remove_diacritics(translate_city(job.find('h4').text.split("-")[-1].split(",")[0].strip()))
-    if city ==' Napoca':
-        city ='Cluj-Napoca'
+    # city = remove_diacritics(translate_city(job.find('h4').text.split("-")[-1].split(",")[0].strip()))
+    city=remove_diacritics(translate_city(job.find("span", {"class":"open-position__details-item-text"}).text.strip()))
+    if city == 'Popesti-Leordeni':
+        city = 'Popesti Leordeni'
+    if city == ' Napoca' or city == 'Cluj Napoca':
+        city = 'Cluj-Napoca'
     if 'Mures' in city:
         city='Targu-Mures'
     if "Bucuresti Mogosoaia" in city:
@@ -26,6 +29,8 @@ for element in jobElements:
         city ='Bucuresti'
     if city == 'Cristesti':
         county='Mures'
+    if city == 'Maramures':
+        county = 'Maramures'
     elif city == 'Iasi':
         county = 'Iasi'
     else:
