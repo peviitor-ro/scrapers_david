@@ -1,6 +1,6 @@
 #!/bin/bash
 
-URL="https://api.peviitor.ro/v5/add/"
+URL="https://api.peviitor.ro/v5/get_token/"
 EMAIL="david.mondoc@gmail.com"
 
 
