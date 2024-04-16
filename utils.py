@@ -1,30 +1,39 @@
 import requests
 import os
 import json
+from dotenv import load_dotenv
+
+load_dotenv()
+
+domain = os.environ.get("DOMAIN")
+
+
+def get_token():
+    """
+    Returnează token-ul necesar pentru a face request-uri către API.
+    :return: token-ul necesar pentru a face request-uri către API
+    """
+    endpoint = os.environ.get("TOKEN_ROUTE")
+    email = os.environ.get("EMAIL")
+    url = f"{domain}{endpoint}"
+    response = requests.post(url, json={"email": email})
+    return response.json()["access"]
 
 def create_job(**kwargs):
     job = {}
     job.update(kwargs)
     return job
 
-def clean(version, company, apikey):
-    apikey = os.environ.get(apikey)
-    content_type = "application/x-www-form-urlencoded"
-    requests.post("https://api.peviitor.ro/v" + str(version) + "/clean/", headers={"apikey": apikey, "Content-Type": content_type}, data={"company": company})
-
-def update(version, apikey, data):
-    apikey = os.environ.get(apikey)
-    content_type = "application/json"
-    requests.post("https://api.peviitor.ro/v" + str(version) + "/update/", headers={"apikey": apikey, "Content-Type": content_type}, json=data)
-
-def dataset(company, data):
-    content_type = "application/json"
-    requests.post(f"https://dev.laurentiumarian.ro/dataset/based_scraper_py/{company.lower()}.py/", headers={"Content-Type": content_type}, json={"data": len(data)})
 
 def publish(version, company, data, apikey):
-    clean(version, company, apikey)
-    update(version, apikey, data)
-    dataset(company, data)
+    route = os.environ.get("ADD_JOBS_ROUTE")
+    url = f"{domain}{route}"
+    token = os.environ.get("TOKEN") if os.environ.get("TOKEN") else get_token()
+
+    headers = {"Content-Type": "application/json",
+               "Authorization": f"Bearer {token}"}
+
+    requests.post(url, headers=headers, json=data)
 
 def publish_logo(company, logo_url):
     content_type = "application/json"

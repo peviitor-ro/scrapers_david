@@ -25,7 +25,6 @@ jobs:
         python3 setup.py develop
         npm i peviitor_jsscraper
     - name: Runing Scrapers
-      env:
-        DAVIDMONDOC: ${{ secrets.DAVIDMONDOC }}
       run: |
+        source access_token.sh
         python3 sites/main.py
