@@ -28,8 +28,8 @@ for job in jobsElements:
             'company': company
         }
     )
-for version in [1, 4]:
-    publish(version, company, jobs, 'DAVIDMONDOC')
+
+publish(company, jobs)
 
 publish_logo(company, 'https://www.cbs-ee.ro/static/imagini/logo.png')
 show_jobs(jobs)

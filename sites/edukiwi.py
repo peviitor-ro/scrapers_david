@@ -30,7 +30,7 @@ for job in jobsElements:
     )
 
 for version in [1, 4]:
-    publish(version, company, jobs, 'DAVIDMONDOC')
+    publish(company, jobs)
     publish_logo(company, 'https://edukiwi.ro/wp-content/themes/wp-bootstrap-4/img/logo-verde-new.svg')
 
 show_jobs(jobs)

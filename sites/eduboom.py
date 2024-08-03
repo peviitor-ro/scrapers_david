@@ -31,7 +31,7 @@ for job in jobsElements:
     )
 
 for version in [1, 4]:
-    publish(version, company, jobs, 'DAVIDMONDOC')
+    publish(company, jobs)
 publish_logo(company, 'https://static.eduboom.ro/assets/base/images/eduboom-logo-l.svg')
 
 show_jobs(jobs)

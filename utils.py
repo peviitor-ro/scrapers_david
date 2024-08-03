@@ -16,7 +16,10 @@ def get_token():
     endpoint = os.environ.get("TOKEN_ROUTE")
     email = os.environ.get("EMAIL")
     url = f"{domain}{endpoint}"
-    response = requests.post(url, json={"email": email})
+    headers={
+        'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36'
+    }
+    response = requests.post(url, json={"email": email}, headers=headers)
     return response.json()["access"]
 
 def create_job(**kwargs):
@@ -25,13 +28,15 @@ def create_job(**kwargs):
     return job
 
 
-def publish(version, company, data, apikey):
+def publish(company, data):
     route = os.environ.get("ADD_JOBS_ROUTE")
     url = f"{domain}{route}"
     token = os.environ.get("TOKEN") if os.environ.get("TOKEN") else get_token()
 
     headers = {"Content-Type": "application/json",
-               "Authorization": f"Bearer {token}"}
+               "Authorization": f"Bearer {token}",
+                'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36'
+    }
 
     requests.post(url, headers=headers, json=data)
 

@@ -30,8 +30,7 @@ for job in jobElements:
             }
         )
 
-for version in [1, 4]:
-    publish(version, company, jobs, 'DAVIDMONDOC')
+publish(company, jobs)
 publish_logo(company, 'https://www.transavia.ro/sites/default/files/logo_0.png')
 
 show_jobs(jobs)

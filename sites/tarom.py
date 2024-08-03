@@ -8,7 +8,7 @@ scraper=Scraper()
 
 scraper.get_from_url(url)
 
-jobsElements=scraper.find("div", {"class":"tab-pane"}).find_all("p")
+jobsElements=scraper.find("div", {"class":"ta-business"}).find_all("p")
 
 jobs = []
 
@@ -31,8 +31,7 @@ for job in jobsElements:
                 })
     except: continue
 
-for version in [1, 4]:
-    publish(version, company, jobs, 'DAVIDMONDOC')
+publish(company, jobs)
 
 publish_logo(company, 'https://www.tarom.ro/sites/all/themes/tarom/static/dist//images/logo-tarom@2x.png')
 show_jobs(jobs)

@@ -34,8 +34,7 @@ for job in jobsElements:
         }
     )
 
-for version in [1, 4]:
-    publish(version, company, jobs, 'DAVIDMONDOC')
+publish(company, jobs)
 
 publish_logo(company, 'https://jobs.ropardo.ro/wp-content/themes/jobs-platform/images/logo.png')
 

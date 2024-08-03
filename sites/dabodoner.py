@@ -8,8 +8,7 @@ scraper = Scraper()
 
 scraper.get_from_url(url)
 
-jobsElements = scraper.find("section", {"class": "jobs"}).find(
-    "div", {"class": "row"}).find_all("div", "col-lg-6")
+jobsElements = scraper.find("section", {"class": "jobs"}).find("div", {"class": "row"}).find_all("div", "col-lg-6")
 
 jobs = []
 
@@ -56,8 +55,7 @@ for job in jobsElements:
 
         jobs.append(jobObj)
 
-for version in [1, 4]:
-    publish(version, company, jobs, 'APIKEY')
+publish(company, jobs)
 
 publish_logo(company, 'https://dabodoner.ro/assets/images/logo.svg')
 show_jobs(jobs)

@@ -6,9 +6,8 @@ company='aeroportulsatumare'
 scraper=Scraper()
 scraper.get_from_url(url)
 
-jobElements=scraper.find_all('ul')[-1].find_all('li')
-
-print(jobElements)
+# jobElements=scraper.find_all('ul')[-1].find_all('li')
+jobElements=scraper.find("div", {"class":"maincontent"}).find_all('p')
 
 jobs=[]
 job_number=1
@@ -31,8 +30,7 @@ for job in jobElements:
         })
     job_number+=1
 
-for version in [1, 4]:
-    publish(version, company, jobs, 'DAVIDMONDOC')
+publish(company, jobs)
 
 publish_logo(company, 'https://www.cjsm.ro/storage/scci/lili/logouri-modificate/aerportulsatumarelogo-475x267_jpg.webp')
 show_jobs(jobs)

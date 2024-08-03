@@ -7,7 +7,7 @@ company = "stayfit"
 scraper = Scraper()
 scraper.get_from_url(url)
 
-jobsElements = scraper.find('div', {'class':'elementor-element-0160319'}).find_all('div', {'class':'elementor-element'})[2:]
+jobsElements = scraper.find('div', {'class':'elementor-element-populated'}).find_all('div', {'class':'elementor-element'})[2:]
 
 job_no=1
 jobs=[]
@@ -34,8 +34,8 @@ for job in jobsElements:
             job_no += 1
     except: pass
 
-for version in [1, 4]:
-    publish(version, company, jobs, 'DAVIDMONDOC')
+
+publish(company, jobs)
 
 publish_logo(company, 'https://stayfit.ro/wp-content/uploads/2020/01/Logo-Stay-Fit-Gym-.png')
 

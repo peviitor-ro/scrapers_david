@@ -1,10 +1,9 @@
 from scraper.Scraper import Scraper
 from utils import (publish, publish_logo, create_job, show_jobs)
 from getCounty import get_county, remove_diacritics
-# id_lang=1&filter-only-open=1&listing-section=job-list&kw=&id_job_department=0&id_owner_branch=0
 
 url="https://www.jobs-continentalhotels.ro/_ajax/get-job-list.php"
-company = "ContinentalHotels"
+company = "continentalhotels"
 scraper = Scraper()
 
 body = {"id_lang":1, "filter-only-open":1,"listing-section" :"job-list", "id_job_department":0, "id_owner_branch":0}
@@ -46,8 +45,7 @@ for job in jobsElements:
             "company": company
         })
 
-for version in [1, 4]:
-    publish(version, company, jobs, 'DAVIDMONDOC')
+publish(company, jobs,)
 
 publish_logo(company, 'https://www.pngkey.com/png/full/396-3967606_continental-hotels-continental-forum-sibiu-sigla.png')
 show_jobs(jobs)

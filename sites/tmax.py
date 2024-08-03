@@ -29,10 +29,9 @@ for job in jobElements:
         }
     )
 
-for version in [1, 4]:
-    publish(version, company, jobs, 'DAVIDMONDOC')
+publish(company, jobs)
 
-publish_logo(company, 'https://tmaxgroup.com/wp-content/themes/wordpress-tmax/images/logo.svg')
+publish_logo(company, 'https://media.licdn.com/dms/image/C4D0BAQFDkByde-vzEg/company-logo_200_200/0/1630527230431/tmax_sibiu_srl_logo?e=1730332800&v=beta&t=NKsN_jFj6HCxYAbZgbhL9Sx5p7a8Sz-rrRLrvB4aNfw')
 show_jobs(jobs)
 
 
