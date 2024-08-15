@@ -54,15 +54,12 @@ def translate_city(city):
     cities = {
         # This is general for all scrapers
         "bucharest": "Bucuresti",
+        "Bucharest ": "Bucuresti",
         "cluj": "Cluj-Napoca",
         "cristești, mureș":"Cristesti",
-        "alba": "Alba Iulia",
-       
-
-
-        ############################
+        "alba": "Alba Iulia"
     }
-    
+
     if cities.get(city.lower()):
         return cities.get(city.lower())
     else:
