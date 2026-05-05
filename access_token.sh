@@ -1,7 +1,7 @@
 #!/bin/bash
 
-URL="https://api.peviitor.ro/v5/get_token/"
-EMAIL="david.mondoc@gmail.com"
+URL="https://api.laurentiumarian.ro/get_token"
+EMAIL="contact@laurentiumarian.ro"
 
 
 ACCESS_TOKEN=$(curl -X POST -H "Content-Type: application/json" -d '{"email": "'$EMAIL'"}' $URL)
